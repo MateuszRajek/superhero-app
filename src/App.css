@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app_title {
+  font-size: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  color: gray;
+}
+
+.app_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.featured_heroes_displayed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  width: 100%;
+}
+
+@media (min-width: 764px) {
+  .featured_heroes_displayed {
+    flex-direction: row;
+    /* justify-content: space-between; */
+  }
+}
+
+.img_container {
+  width: 300px
+}

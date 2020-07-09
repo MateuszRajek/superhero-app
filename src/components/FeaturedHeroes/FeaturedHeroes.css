@@ -1,0 +1,36 @@
+.hero {
+  width: 80%;
+}
+
+@media (min-width: 764px) {
+  .hero {
+    width: 45%;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    width: 33%;
+  }
+}
+
+.hero_name {
+  text-align: center;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  padding: 30px;
+  background-color: white;
+}
+
+.hero_img {
+  width: 90%;
+  transition: linear .3s;
+}
+
+.hero_img:hover {
+  transform: scale(1.1);
+}
