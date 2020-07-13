@@ -1,4 +1,4 @@
-.featured_heroes_displayed {
+.searched_heroes_displayed {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,4 +47,10 @@
 
 .hero_img:hover {
   transform: scale(1.1);
+}
+
+.img_container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

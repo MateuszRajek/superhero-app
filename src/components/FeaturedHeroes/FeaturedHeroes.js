@@ -22,7 +22,7 @@ class FeaturedHeroes extends React.Component {
       heroes.push(data)
     }
 
-    this.setState(heroes)
+    this.setState({ heroes })
     console.log(heroes)
   }
 
@@ -33,20 +33,20 @@ class FeaturedHeroes extends React.Component {
 
   render() {
     return (
-      <>
-        <h1>test</h1>
-        {this.state.heroes.map(hero => {
-          return (
-            <div className="hero" key={hero.id}>
-              <h2 className="hero_name">{hero.name}</h2>
-              <div className="img_container">
-                <img className="hero_img" src={hero.imageUrl} alt=""></img>
+      <section className="featured_heroes_displayed">
+        {
+          this.state.heroes.map(hero => {
+            return (
+              <div className="hero" key={hero.id}>
+                <h2 className="hero_name">{hero.name}</h2>
+                <div className="img_container">
+                  <img className="hero_img" src={hero.imageUrl} alt=""></img>
+                </div>
               </div>
-            </div>
-          );
-        })
+            );
+          })
         }
-      </>
+      </section>
     )
   }
 }

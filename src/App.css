@@ -22,15 +22,6 @@
   align-items: flex-end;
 }
 
-.featured_heroes_displayed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 50px auto;
-  width: 100%;
-}
-
 @media (min-width: 764px) {
   .featured_heroes_displayed {
     flex-direction: row;
