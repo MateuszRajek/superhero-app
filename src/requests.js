@@ -26,6 +26,6 @@ export const getHeroBySearchedName = name => {
     return axios.get(`https://superheroapi.com/api/${APIToken}/search/${name}`)
 }
 
-// export const getHeroByName = name => {
-//     return axios.get(`https://superheroapi.com/api/${APIToken}/search/${name}`)
-// }
+export const getFullHeroInfoById = id => {
+    return axios.get(`https://superheroapi.com/api/${APIToken}/${id}`)
+}

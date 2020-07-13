@@ -1,3 +1,19 @@
+.main_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_image_container {
+  width: 120px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
 .featured_heroes_displayed {
   display: flex;
   justify-content: center;

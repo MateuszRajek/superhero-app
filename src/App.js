@@ -3,7 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FeaturedHeroes from './components/FeaturedHeroes/FeaturedHeroes';
 import SearchHeroView from './components/SearchHeroView/SearchHeroView'
+import HeroDetailsView from './components/HeroDetailsView/HeroDetailsView';
 import Nav from './components/Nav/Nav';
+
 
 function App() {
 
@@ -20,9 +22,9 @@ function App() {
             <Route path="/search/:name">
               <SearchHeroView />
             </Route>
-            {/* <Route path="/hero/:id">
+            <Route path="/hero/:id">
               <HeroDetailsView />
-            </Route> */}
+            </Route>
           </Switch>
         </div>
       </main>
