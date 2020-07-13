@@ -1,53 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HeroDetailsView.css';
 import { getFullHeroInfoById } from '../../requests'
+import { useParams } from 'react-router';
+
+function HeroDetailsView() {
+  const { id } = useParams()
+  const [hero, setHero] = useState([])
+  console.log(id)
 
 
-
-
-class HeroDetailsView extends React.Component {
-  constructor(props) {
-    super();
-    console.log(props.match)
-    this.state = {
-      state: props.match
-      // heroId: props.match.params.id,
-    }
-  }
-
-
-  getHeroInfo = () => {
-    // const { heroId } = this.state;
-    getFullHeroInfoById(143).then(resp => {
+  const getHeroInfo = async () => {
+    await getFullHeroInfoById(id).then(resp => {
       const { data } = resp;
-      console.log(data)
+      console.log(data);
+      setHero(data);
+      console.log(hero)
     })
   }
 
+  useEffect(() => {
+    getHeroInfo();
+  }, [])
 
-  componentDidMount() {
-    this.getHeroInfo()
-    console.log(this.state.state)
-  }
 
-  render() {
-    return (
-      <section className="hero_displayed">
-        <h1>TEST</h1>
-        {/* {
-          this.state.heroes.map(hero => {
-            return (
-              <div className="hero" key={hero.id}>
-                <h2 className="hero_name">{hero.name}</h2>
-                <div className="img_container">
-                  <img className="hero_img" src={hero.image.url} alt=""></img>
-                </div>
-              </div>
-            );
-          })
-        } */}
-      </section>
-    )
-  }
+  return (
+    <section className="hero_displayed">
+      <h1>TEST</h1>
+      {
+        // hero.map(hero => {
+        //   return (
+        //     <div className="hero" key={hero.id}>
+        //       <h2 className="hero_name">{hero.name}</h2>
+        //       <div className="img_container">
+        //         <img className="hero_img" src={hero.image.url} alt=""></img>
+        //       </div>
+        //     </div>
+        //   );
+        // })
+      }
+    </section>
+  )
 }
 export default HeroDetailsView;
