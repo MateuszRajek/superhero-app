@@ -1,6 +1,7 @@
 import React from 'react';
 import './FeaturedHeroes.css';
 import { getHeroLimitedInfo } from '../../requests'
+import { Link } from 'react-router-dom';
 
 
 const featuredHeroesArray = [123, 456, 712]
@@ -40,7 +41,7 @@ class FeaturedHeroes extends React.Component {
               <div className="hero" key={hero.id}>
                 <h2 className="hero_name">{hero.name}</h2>
                 <div className="img_container">
-                  <img className="hero_img" src={hero.imageUrl} alt=""></img>
+                  <Link to={`/hero/${hero.id}`}><img className="hero_img" src={hero.imageUrl} alt="" /></Link>
                 </div>
               </div>
             );

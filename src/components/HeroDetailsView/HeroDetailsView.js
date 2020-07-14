@@ -5,40 +5,44 @@ import { useParams } from 'react-router';
 
 function HeroDetailsView() {
   const { id } = useParams()
-  const [hero, setHero] = useState([])
-  console.log(id)
-
+  const [hero, setHero] = useState({})
+  const [isLoading, setLoadingState] = useState(true)
+  const { appearance, powerstats, name, image } = hero
+  console.log(image)
 
   const getHeroInfo = async () => {
-    await getFullHeroInfoById(id).then(resp => {
-      const { data } = resp;
-      console.log(data);
+    await getFullHeroInfoById(id).then(response => {
+      const { data } = response;
       setHero(data);
-      console.log(hero)
+      setLoadingState(false)
+      console.log(data)
     })
   }
 
   useEffect(() => {
     getHeroInfo();
-  }, [])
+  }, [id])
 
 
   return (
-    <section className="hero_displayed">
-      <h1>TEST</h1>
-      {
-        // hero.map(hero => {
-        //   return (
-        //     <div className="hero" key={hero.id}>
-        //       <h2 className="hero_name">{hero.name}</h2>
-        //       <div className="img_container">
-        //         <img className="hero_img" src={hero.image.url} alt=""></img>
-        //       </div>
-        //     </div>
-        //   );
-        // })
+    <>
+      {!isLoading && <section className="hero_displayed">
+        <h1>{name}</h1>
+        <div className="img_container">
+          <img className="hero_img" src={image.url} alt="" />
+        </div>
+        <h2>Gender: </h2>
+        <p>{(appearance.gender == null) ? "no data available" : appearance.gender}</p>
+        <p>{(appearance.race == null) ? "no data available" : appearance.race}</p>
+        <ul>
+          <h3>Powerstats: </h3>
+          <li>Combat: {(powerstats.combat === null) ? "no data available" : powerstats.combat}</li>
+        </ul>
+
+      </section>
       }
-    </section>
+    </>
+
   )
 }
 export default HeroDetailsView;

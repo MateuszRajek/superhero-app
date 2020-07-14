@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './SearchHeroView.css';
-import { searchingHeroName } from '../Nav/Nav'
+// import { searchingHeroName } from '../Nav/Nav'
 import { getHeroBySearchedName } from '../../requests'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
-class SearchHeroView extends React.Component {
-  constructor() {
-    super();
+function SearchHeroView() {
+  const { name } = useParams();
+  // const [searchingHeroName, setSearchingHeroName] = useState({ name })
+  const [heroesList, setHeroesList] = useState([])
+  const [isLoading, setLoadingState] = useState(true)
+  console.log(heroesList)
 
-    this.state = {
-      searchingHeroName: searchingHeroName,
-      heroesList: [],
-    }
 
-  }
-  getAndRenderSearchedHeroes = () => {
-    const heroName = this.state.searchingHeroName;
+
+
+  const getAndRenderSearchedHeroes = async () => {
+    // const heroName = name;
     // const heroesListArray = []       <--dlaczego przypisanie data.results do zmiennej heroesListArray i aktualizacja stanu po tej zmiennej nie działa??
-    getHeroBySearchedName(heroName).then(response => {
+    await getHeroBySearchedName(name).then(response => {
       const { data } = response
       console.log(data)
 
       const { results } = data
       // heroesListArray.push(results);
       // this.setState({ searchingHeroName: heroName })
-      this.setState({ heroesList: results })
+      setHeroesList(results)
+      setLoadingState(false)
       console.log(results)
     });
 
@@ -33,27 +34,31 @@ class SearchHeroView extends React.Component {
   }
 
 
-  componentDidMount() {
-    this.getAndRenderSearchedHeroes()
-  }
+  useEffect(() => {
+    getAndRenderSearchedHeroes()
+  }, [name])
 
-  render() {
-    return (
-      <section className="searched_heroes_displayed">
-        {
-          this.state.heroesList.map(hero => {
-            return (
-              <div className="hero" key={hero.id}>
-                <h2 className="hero_name">{hero.name}</h2>
-                <div className="img_container">
-                  <Link to={`hero/${hero.id}`}><img className="hero_img" src={hero.image.url} alt=""></img></Link>
-                </div>
+
+
+  return (
+    <>
+      {!isLoading && <section className="searched_heroes_displayed">
+        {heroesList.map(hero => {
+          return (
+            <div className="hero" key={hero.id}>
+              <h2 className="hero_name">{hero.name}</h2>
+              <div className="img_container">
+                <Link to={`/hero/${hero.id}`}><img className="hero_img" src={hero.image.url} alt=""></img></Link>
               </div>
-            );
-          })
+            </div>
+          );
+        })
         }
       </section >
-    )
-  }
+      }
+    </>
+
+  )
 }
+
 export default SearchHeroView;
