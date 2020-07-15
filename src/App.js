@@ -5,31 +5,34 @@ import FeaturedHeroes from './components/FeaturedHeroes/FeaturedHeroes';
 import SearchHeroView from './components/SearchHeroView/SearchHeroView'
 import HeroDetailsView from './components/HeroDetailsView/HeroDetailsView';
 import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
 
 
   return (
-    <Router>
-      <main>
-        <div className="container">
-          <Nav />
-          <Switch>
-            <Route exact path="/">
-              <FeaturedHeroes />
-            </Route>
-            <Route path="/search/:name">
-              <SearchHeroView />
-            </Route>
-            <Route path="/hero/:id">
-              <HeroDetailsView />
-            </Route>
-          </Switch>
-        </div>
-      </main>
-    </Router>
-
+    <>
+      <Router>
+        <Nav />
+        <main>
+          <div className="container">
+            <Switch>
+              <Route exact path="/">
+                <FeaturedHeroes />
+              </Route>
+              <Route path="/search/:name">
+                <SearchHeroView />
+              </Route>
+              <Route path="/hero/:id">
+                <HeroDetailsView />
+              </Route>
+            </Switch>
+          </div>
+        </main>
+        <Footer />
+      </Router>
+    </>
 
   )
 }

@@ -13,14 +13,18 @@ function HeroDetailsView() {
   const [hero, setHero] = useState({});
   const [isLoading, setLoadingState] = useState(true);
   const { appearance, powerstats, name, image, biography, work, connections } = hero;
-
-  console.log(biography)
+  const [error, setErrorState] = useState('');
 
   const getHeroInfo = async () => {
     await getFullHeroInfoById(id).then(response => {
       const { data } = response;
+      if (data.error) {
+        setErrorState(data.error);
+        return
+      }
       setHero(data);
       setLoadingState(false);
+      setErrorState('')
     })
   }
 

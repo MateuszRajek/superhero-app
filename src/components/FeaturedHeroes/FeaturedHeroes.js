@@ -5,22 +5,28 @@ import { Link } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
 import Loader from '../Loader/Loader';
 
-
 const featuredHeroesArray = [659, 720, 332]
 
 function FeaturedHeroes() {
   const [heroes, setHeroesState] = useState([]);
   const [isLoading, setLoadingState] = useState(true);
+  const [error, setErrorState] = useState('')
 
   const getAndRenderFeaturedHeroes = async () => {
     const heroes = [];
     for (const heroId of featuredHeroesArray) {
       const data = await getHeroLimitedInfo(heroId);
       heroes.push(data);
+      if (data.error) {
+        setErrorState(data.error);
+        return
+      }
     }
+
 
     setHeroesState(heroes);
     setLoadingState(false);
+    setErrorState('');
   }
 
   useEffect(() => {
@@ -28,8 +34,9 @@ function FeaturedHeroes() {
   }, [])
 
   return (
-    <>
-      {!isLoading && <section className="featured_heroes">
+    <section className="featured_heroes">
+      {error && <p>{error}</p>}
+      {!isLoading && <>
         <h2 className="featured_heroes_section_title">featured heroes:</h2>
         <div className="featured_heroes_displayed">
           {heroes.map(hero => {
@@ -46,11 +53,11 @@ function FeaturedHeroes() {
           })
           }
         </div>
-      </section>
+      </>
       }
       {isLoading && <Loader />
       }
-    </>
+    </section>
   )
 }
 export default FeaturedHeroes;

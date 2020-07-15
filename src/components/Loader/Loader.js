@@ -5,9 +5,9 @@ import './Loader.css';
 function Loader({ combat, durability, intelligence, speed, strength }) {
 
   return (
-    <div class="loader_container">
-      <div class="right_hand_side_spinner"></div>
-      <div class="left_hand_side_spinner"></div>
+    <div className="loader_container">
+      <div className="right_hand_side_spinner"></div>
+      <div className="left_hand_side_spinner"></div>
     </div>
   )
 }

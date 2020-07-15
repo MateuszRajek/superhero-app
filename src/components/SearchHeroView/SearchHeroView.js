@@ -8,15 +8,21 @@ import Loader from '../Loader/Loader';
 
 function SearchHeroView() {
   const { name } = useParams();
-  const [heroesList, setHeroesList] = useState([])
-  const [isLoading, setLoadingState] = useState(true)
+  const [heroesList, setHeroesList] = useState([]);
+  const [isLoading, setLoadingState] = useState(true);
+  const [error, setErrorState] = useState('');
 
   const getAndRenderSearchedHeroes = async () => {
     await getHeroBySearchedName(name).then(response => {
       const { data } = response
-      const { results } = data
-      setHeroesList(results)
-      setLoadingState(false)
+      if (data.error) {
+        setErrorState(data.error);
+        return
+      }
+      const { results } = data;
+      setHeroesList(results);
+      setLoadingState(false);
+      setErrorState('');
     });
   }
 
@@ -26,6 +32,7 @@ function SearchHeroView() {
 
   return (
     <>
+      {error && <p>{error}</p>}
       {!isLoading && <section className="searched_heroes_displayed">
         {heroesList.map(hero => {
           return (

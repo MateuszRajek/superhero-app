@@ -3,12 +3,8 @@ import './Nav.css';
 import logo from '../../assets/logo/logo.png'
 import { Link } from 'react-router-dom';
 
-
-
 function Nav() {
-
   const [heroNameFromInput, setheroNameState] = useState('');
-
   const onInputChange = event => {
     setheroNameState(event.target.value);
   }
@@ -32,14 +28,9 @@ function Nav() {
         </div>
         <Link to={`/search/${heroNameFromInput}`}><button onClick={() => { clearState() }} label={'add hero'}>find hero</button> </Link>
       </form>
-
-
     </nav >
-
   )
 }
-
-
 
 export default Nav;
 
