@@ -1,0 +1,51 @@
+.hero_biography {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.hero_biography_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 3px;
+}
+
+.hero_appearance_info {
+  animation: move 1s linear forwards;
+  transform: translate(-700%);
+}
+
+@keyframes move {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.hero_powerstats_info {
+  animation: move 1s linear forwards;
+  transform: translate(900%);
+}
+
+@keyframes move {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.hero_biography_info h3 {
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: gray;
+}
+
+.hero_biography_info p {
+  font-family: 'Bangers', cursive;
+  font-weight: 100;
+  font-size: 22px;
+  letter-spacing: 4px;
+}

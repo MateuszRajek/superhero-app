@@ -49,23 +49,7 @@
 .hero_name {
   margin: 10px 0;
   font-family: 'Bangers', cursive;
-  font-size: 30px;
+  font-size: 35px;
   letter-spacing: 3px;
   text-align: center;
-}
-
-.hero_powerstats,
-.hero_appearance {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: 15px 0;
-}
-
-.hero_powerstats_info,
-.hero_appearance_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

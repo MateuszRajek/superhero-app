@@ -1,0 +1,24 @@
+.hero_appearance {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.hero_appearance_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_appearance_info {
+  animation: move 2s linear forwards;
+  transform: translate(-700%);
+}
+
+@keyframes move {
+  100% {
+    transform: translate(0);
+  }
+}
