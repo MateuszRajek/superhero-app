@@ -8,7 +8,7 @@
 }
 
 .app_title {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 500;
   font-family: 'Bangers', cursive;
   font-weight: 500;
@@ -18,7 +18,12 @@
   color: gray;
 }
 
-.wrapper {
+.logo_title_wrapper {
+  width: 80%;
+}
+
+.wrapper,
+.logo_title_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,7 +37,7 @@
 }
 
 .logo_image_container {
-  width: 30%;
+  width: 50%;
   max-width: 200px;
 }
 
@@ -84,12 +89,18 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-  .wrapper {
+
+  .wrapper,
+  .logo_title_wrapper {
     flex-direction: row;
   }
 
   .app_title {
-    font-size: 50px;
+    font-size: 70px;
+  }
+
+  .logo_image_container {
+    width: 30%;
   }
 }
 

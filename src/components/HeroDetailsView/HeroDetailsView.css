@@ -1,0 +1,34 @@
+.hero_displayed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    width: 90%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 15px;
+}
+
+.hero_details_info {
+    margin: 15px 0;
+    width: 100%;
+}
+
+@media (min-width: 560px) {
+    .hero {
+        width: 65%;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        width: 45%;
+    }
+}

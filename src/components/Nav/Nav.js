@@ -7,19 +7,19 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
 
-  const [heroNameFromInput, setheroNameState] = useState(''),
+  const [heroNameFromInput, setheroNameState] = useState('');
 
-    onInputChange = event => {
-      setheroNameState(event.target.value)
-    }
+  const onInputChange = event => {
+    setheroNameState(event.target.value);
+  }
 
   const clearState = () => {
-    setheroNameState('')
+    setheroNameState('');
   }
 
   return (
     <nav className="main_nav">
-      <div className="wrapper ">
+      <div className="logo_title_wrapper ">
         <div className="logo_image_container">
           <Link to="/"><img className="logo" src={logo} alt="logo" /></Link>
         </div>

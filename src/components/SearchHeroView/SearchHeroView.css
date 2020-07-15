@@ -7,51 +7,29 @@
   width: 100%;
 }
 
-.hero {
+.searched_hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin: 15px;
 }
 
+@media (min-width: 560px) {
+  .searched_hero {
+    width: 65%;
+  }
+}
+
 @media (min-width: 764px) {
-  .hero {
+  .searched_hero {
     width: 45%;
   }
 }
 
-@media (min-width: 960px) {
-  .hero {
+@media (min-width: 1125px) {
+  .searched_hero {
     width: 30%;
   }
-}
-
-/* .hero_name {
-  text-align: center;
-} */
-
-.img_container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 40px 30px;
-  background-color: white;
-  border-radius: 25px;
-}
-
-.hero_img {
-  width: 90%;
-  transition: linear .3s;
-}
-
-.hero_img:hover {
-  transform: scale(1.1);
-}
-
-.img_container a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

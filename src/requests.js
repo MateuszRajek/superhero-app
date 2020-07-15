@@ -8,18 +8,14 @@ const APIToken = 3110661399003594
 
 export const getHeroLimitedInfo = async id => {
     const { data: image } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/image`);
-    const { data: powerstats } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/image`);
-
+    const { data: powerstats } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/powerstats`);
 
     return ({
         imageUrl: image.url,
         name: image.name,
         id,
-        powerstats
-    }
-
-    )
-
+        powerstats,
+    })
 }
 
 export const getHeroBySearchedName = name => {
