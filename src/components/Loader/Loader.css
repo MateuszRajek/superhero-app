@@ -1,0 +1,52 @@
+.loader_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right_hand_side_spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-left: 2px solid black;
+  border-radius: 50%;
+  animation: spinToRight 1s linear infinite;
+}
+
+
+@keyframes spinToRight {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
+.left_hand_side_spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-right: 2px solid black;
+  border-radius: 50%;
+  animation: spinToLeft 1s linear infinite;
+}
+
+@keyframes spinToLeft {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg)
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}

@@ -3,6 +3,7 @@ import './SearchHeroView.css';
 import { getHeroBySearchedName } from '../../requests'
 import { Link, useParams } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
+import Loader from '../Loader/Loader';
 
 
 function SearchHeroView() {
@@ -40,6 +41,7 @@ function SearchHeroView() {
         }
       </section >
       }
+      {isLoading && <Loader />}
     </>
   )
 }

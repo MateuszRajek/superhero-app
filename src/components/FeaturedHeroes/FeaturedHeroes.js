@@ -3,6 +3,7 @@ import './FeaturedHeroes.css';
 import { getHeroLimitedInfo } from '../../requests'
 import { Link } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
+import Loader from '../Loader/Loader';
 
 
 const featuredHeroesArray = [659, 720, 332]
@@ -28,9 +29,9 @@ function FeaturedHeroes() {
 
   return (
     <>
-      <section className="featured_heroes">
-        <h2 className="featured_heroes_section_title">featured heroes</h2>
-        {!isLoading && <div className="featured_heroes_displayed">
+      {!isLoading && <section className="featured_heroes">
+        <h2 className="featured_heroes_section_title">featured heroes:</h2>
+        <div className="featured_heroes_displayed">
           {heroes.map(hero => {
             return (
               <div className="featured_hero" key={hero.id}>
@@ -45,8 +46,10 @@ function FeaturedHeroes() {
           })
           }
         </div>
-        }
       </section>
+      }
+      {isLoading && <Loader />
+      }
     </>
   )
 }

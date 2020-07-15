@@ -6,6 +6,7 @@ import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
 import Appearance from '../HeroDataComponents/Appearance/Appearance';
 import Biography from '../HeroDataComponents/Biography/Biography';
 import OtherDetails from '../HeroDataComponents/OtherDetails/OtherDetails';
+import Loader from '../Loader/Loader';
 
 function HeroDetailsView() {
   const { id } = useParams();
@@ -45,6 +46,7 @@ function HeroDetailsView() {
         <OtherDetails firstAppearance={biography['first-appearance']} occupation={work.occupation} team={connections['group-affiliation']} relatives={connections.relatives} />
       </section>
       }
+      {isLoading && <Loader />}
     </>
   )
 }

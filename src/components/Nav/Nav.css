@@ -79,6 +79,7 @@ button {
   background-color: transparent;
   color: white;
   text-transform: uppercase;
+  cursor: pointer;
   transition: .4s;
 }
 
