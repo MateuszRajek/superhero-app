@@ -8,6 +8,9 @@ footer p {
 }
 
 .api_link {
+  font-family: 'Bangers', cursive;
+  text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 5px;
   color: gray
 }

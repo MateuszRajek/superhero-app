@@ -10,6 +10,10 @@ function Nav() {
   }
 
   const clearState = () => {
+    if (heroNameFromInput === '') {
+      alert('PLEASE ENTER HERO NAME');
+      return
+    }
     setheroNameState('');
   }
 

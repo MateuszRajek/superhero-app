@@ -1,7 +1,6 @@
 import React from 'react';
 import './Loader.css';
 
-
 function Loader({ combat, durability, intelligence, speed, strength }) {
 
   return (

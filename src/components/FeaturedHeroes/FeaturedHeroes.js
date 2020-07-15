@@ -23,7 +23,6 @@ function FeaturedHeroes() {
       }
     }
 
-
     setHeroesState(heroes);
     setLoadingState(false);
     setErrorState('');

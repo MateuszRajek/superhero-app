@@ -12,6 +12,7 @@ function SearchHeroView() {
   const [isLoading, setLoadingState] = useState(true);
   const [error, setErrorState] = useState('');
 
+
   const getAndRenderSearchedHeroes = async () => {
     await getHeroBySearchedName(name).then(response => {
       const { data } = response
