@@ -34,7 +34,8 @@ function SearchHeroView() {
               <div className="hero_img_container">
                 <Link to={`/hero/${hero.id}`}><img className="hero_img" src={hero.image.url} alt=""></img></Link>
               </div>
-              <Powerstats />
+              <Powerstats combat={hero.powerstats.combat} durability={hero.powerstats.durability} intelligence={hero.powerstats.intelligence}
+                speed={hero.powerstats.speed} strength={hero.powerstats.strength} />
             </div>
           );
         })
