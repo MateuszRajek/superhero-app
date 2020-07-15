@@ -35,9 +35,10 @@
 .img_container {
   display: flex;
   justify-content: center;
-  padding: 30px;
-  background-color: white;
   width: 100%;
+  padding: 40px 30px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .hero_img {

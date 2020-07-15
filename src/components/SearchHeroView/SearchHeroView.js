@@ -1,44 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import './SearchHeroView.css';
-// import { searchingHeroName } from '../Nav/Nav'
 import { getHeroBySearchedName } from '../../requests'
 import { Link, useParams } from 'react-router-dom';
 
 
 function SearchHeroView() {
   const { name } = useParams();
-  // const [searchingHeroName, setSearchingHeroName] = useState({ name })
   const [heroesList, setHeroesList] = useState([])
   const [isLoading, setLoadingState] = useState(true)
-  console.log(heroesList)
-
-
-
 
   const getAndRenderSearchedHeroes = async () => {
-    // const heroName = name;
-    // const heroesListArray = []       <--dlaczego przypisanie data.results do zmiennej heroesListArray i aktualizacja stanu po tej zmiennej nie działa??
     await getHeroBySearchedName(name).then(response => {
       const { data } = response
-      console.log(data)
-
       const { results } = data
-      // heroesListArray.push(results);
-      // this.setState({ searchingHeroName: heroName })
       setHeroesList(results)
       setLoadingState(false)
-      console.log(results)
     });
-
-
   }
-
 
   useEffect(() => {
     getAndRenderSearchedHeroes()
   }, [name])
-
-
 
   return (
     <>
@@ -57,7 +39,6 @@ function SearchHeroView() {
       </section >
       }
     </>
-
   )
 }
 
