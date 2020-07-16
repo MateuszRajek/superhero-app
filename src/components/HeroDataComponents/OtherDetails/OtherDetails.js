@@ -20,8 +20,8 @@ function OtherDetails({ firstAppearance, occupation, team, relatives }) {
       </div>
       <div>
         <h3>family and relatives</h3>
-        <p>{relatives === 'null' ? "N/A" : relatives.split(',').map(person => {
-          return <li>{person.trim()}</li>
+        <p>{relatives === 'null' ? "N/A" : relatives.split('),').map(person => {
+          return <li key={person}>{person.trim()})</li>
         })}</p>
       </div>
     </div>
