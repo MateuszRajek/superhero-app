@@ -4,6 +4,7 @@ import { getHeroBySearchedName } from '../../requests'
 import { Link, useParams } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
 import Loader from '../Loader/Loader';
+import Hero from '../Hero/Hero';
 
 
 function SearchHeroView() {
@@ -38,12 +39,7 @@ function SearchHeroView() {
         {heroesList.map(hero => {
           return (
             <div className="searched_hero" key={hero.id}>
-              <h2 className="hero_name">{hero.name}</h2>
-              <div className="hero_img_container">
-                <Link to={`/hero/${hero.id}`}><img className="hero_img" src={hero.image.url} alt=""></img></Link>
-              </div>
-              <Powerstats combat={hero.powerstats.combat} durability={hero.powerstats.durability} intelligence={hero.powerstats.intelligence}
-                speed={hero.powerstats.speed} strength={hero.powerstats.strength} />
+              <Hero id={hero.id} name={hero.name} imageUrl={hero.image.url} hero={hero} />
             </div>
           );
         })

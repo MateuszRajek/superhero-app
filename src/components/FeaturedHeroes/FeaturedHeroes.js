@@ -4,6 +4,7 @@ import { getHeroLimitedInfo } from '../../requests'
 import { Link } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
 import Loader from '../Loader/Loader';
+import Hero from '../Hero/Hero';
 
 const featuredHeroesArray = [659, 720, 332]
 
@@ -41,12 +42,7 @@ function FeaturedHeroes() {
           {heroes.map(hero => {
             return (
               <div className="featured_hero" key={hero.id}>
-                <h2 className="hero_name">{hero.name}</h2>
-                <div className="hero_img_container">
-                  <Link to={`/hero/${hero.id}`}><img className="hero_img" src={hero.imageUrl} alt="" /></Link>
-                </div>
-                <Powerstats combat={hero.powerstats.combat} durability={hero.powerstats.durability} intelligence={hero.powerstats.intelligence}
-                  speed={hero.powerstats.speed} strength={hero.powerstats.strength} />
+                <Hero id={hero.id} name={hero.name} imageUrl={hero.imageUrl} hero={hero} />
               </div>
             );
           })
