@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './SearchHeroView.css';
 import { getHeroBySearchedName } from '../../requests'
-import { Link, useParams } from 'react-router-dom';
-import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
+import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import Hero from '../Hero/Hero';
 

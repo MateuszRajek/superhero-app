@@ -8,23 +8,23 @@ function Powerstats({ combat, durability, intelligence, speed, strength }) {
     <div className="hero_powerstats">
       <div className="hero_powerstats_info">
         <i className="fas fa-fist-raised" />
-        <p>{combat}</p>
+        <p>{combat === 'null' ? "N/A" : combat}</p>
       </div>
       <div className="hero_powerstats_info">
         <i className="fas fa-battery-full" />
-        <p>{durability}</p>
+        <p>{durability === 'null' ? "N/A" : durability}</p>
       </div>
       <div className="hero_powerstats_info">
         <i className="fas fa-brain" />
-        <p>{intelligence}</p>
+        <p>{intelligence === 'null' ? "N/A" : intelligence}</p>
       </div>
       <div className="hero_powerstats_info">
         <i className="fas fa-tachometer-alt" />
-        <p>{speed}</p>
+        <p>{speed === 'null' ? "N/A" : speed}</p>
       </div>
       <div className="hero_powerstats_info">
         <i className="fas fa-dumbbell" />
-        <p>{strength}</p>
+        <p>{strength === 'null' ? "N/A" : strength}</p>
       </div>
     </div>
   )

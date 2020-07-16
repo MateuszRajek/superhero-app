@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './FeaturedHeroes.css';
-import { getHeroLimitedInfo } from '../../requests'
-import { Link } from 'react-router-dom';
-import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
+import { getHeroLimitedInfo } from '../../requests';
 import Loader from '../Loader/Loader';
 import Hero from '../Hero/Hero';
 

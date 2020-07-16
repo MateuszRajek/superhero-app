@@ -8,15 +8,15 @@ function Biography({ fullName, alterEgos, placeOfBirth }) {
     <div className="hero_biography">
       <div className="hero_biography_info">
         <h3>full name: </h3>
-        <p>{fullName}</p>
+        <p>{fullName === 'null' ? "N/A" : fullName}</p>
       </div>
       <div className="hero_biography_info">
         <h3>alter egos: </h3>
-        <p>{alterEgos}</p>
+        <p>{alterEgos === 'null' ? "N/A" : alterEgos}</p>
       </div>
       <div className="hero_biography_info">
         <h3>place of birth: </h3>
-        <p>{placeOfBirth}</p>
+        <p>{placeOfBirth === 'null' ? "N/A" : placeOfBirth}</p>
       </div>
     </div>
   )
