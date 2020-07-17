@@ -16,7 +16,7 @@ function LandingPage() {
 
   return (
     <section className="landing_page">
-      <p className="app_welcome">This superhero app gets the content from <a href="https://superheroapi.com" target="_blank" rel="noopener noreferrer">'https://superheroapi.com'</a> To prevent unauthorised users it requires personal acces token</p>
+      <p className="app_welcome">This superheroes app gets the content from <a href="https://superheroapi.com" target="_blank" rel="noopener noreferrer">'https://superheroapi.com'</a> To prevent unauthorised users it requires personal acces token</p>
       <form className="acces_token_form" >
         <h2 className="type_acces_token_label" forhtml="type_acces_token_input">Please provide your acces token here: </h2>
         <div className="wrapper">
