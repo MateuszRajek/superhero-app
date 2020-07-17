@@ -1,0 +1,75 @@
+.landing_page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-image: linear-gradient(rgba(81, 226, 245, .5), rgba(157, 249, 239, .5),
+      rgba(237, 247, 86, .5), rgba(255, 168, 182, .5), rgba(162, 128, 137, .5));
+  z-index: 1;
+}
+
+.app_welcome {
+  font-size: 20px;
+  text-align: center;
+}
+
+.app_welcome a {
+  text-decoration: none;
+  color: gray;
+}
+
+.acces_token_form {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.type_acces_token {
+  margin: 10px;
+  padding: 5px;
+  width: 240px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  transition: .5s;
+}
+
+.type_acces_token:hover {
+  background-color: white;
+  color: rgb(171, 171, 171);
+  border-color: rgb(211, 211, 211);
+}
+
+.type_acces_token_label {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 5px 15px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+  color: black;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .4s;
+}
+
+button:hover {
+  background-color: white;
+  color: rgb(171, 171, 171);
+  border-color: rgb(211, 211, 211);
+}

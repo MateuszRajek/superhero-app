@@ -6,6 +6,7 @@ import SearchHeroView from './components/SearchHeroView/SearchHeroView'
 import HeroDetailsView from './components/HeroDetailsView/HeroDetailsView';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import LandingPage from './components/LandingPage/LandingPage';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/">
+                <LandingPage />
+              </Route>
+              <Route exact path="/home">
                 <FeaturedHeroes />
               </Route>
               <Route path="/search/:name">
