@@ -3,8 +3,6 @@ import './Hero.css';
 import { Link } from 'react-router-dom';
 import Powerstats from '../HeroDataComponents/Powerstats/Powerstats';
 
-
-
 function Hero({ id, name, imageUrl, hero }) {
 
   return (
@@ -16,7 +14,6 @@ function Hero({ id, name, imageUrl, hero }) {
       <Powerstats combat={hero.powerstats.combat} durability={hero.powerstats.durability} intelligence={hero.powerstats.intelligence}
         speed={hero.powerstats.speed} strength={hero.powerstats.strength} />
     </>
-
   )
 }
 

@@ -34,7 +34,7 @@ function HeroDetailsView() {
 
   return (
     <>
-      {error && <p>{error}</p>}
+      {!isLoading && error && <p>{error}</p>}
       {!isLoading && <section className="hero_displayed">
         <div className="hero">
           <h2 className="hero_name">{name}</h2>

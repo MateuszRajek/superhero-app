@@ -5,13 +5,11 @@ import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import Hero from '../Hero/Hero';
 
-
 function SearchHeroView() {
   const { name } = useParams();
   const [heroesList, setHeroesList] = useState([]);
   const [isLoading, setLoadingState] = useState(true);
   const [error, setErrorState] = useState('');
-
 
   const getAndRenderSearchedHeroes = async () => {
     await getHeroBySearchedName(name).then(response => {
@@ -33,7 +31,7 @@ function SearchHeroView() {
 
   return (
     <>
-      {error && <p>{error}</p>}
+      {!isLoading && error && <p>{error}</p>}
       {!isLoading && <section className="searched_heroes_displayed">
         {heroesList.map(hero => {
           return (

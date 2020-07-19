@@ -11,7 +11,6 @@ import LandingPage from './components/LandingPage/LandingPage';
 
 function App() {
 
-
   return (
     <>
       <Router>
@@ -22,7 +21,7 @@ function App() {
               <Route exact path="/">
                 <LandingPage />
               </Route>
-              <Route exact path="/home">
+              <Route path="/home" >
                 <FeaturedHeroes />
               </Route>
               <Route path="/search/:name">
@@ -37,7 +36,6 @@ function App() {
         <Footer />
       </Router>
     </>
-
   )
 }
 

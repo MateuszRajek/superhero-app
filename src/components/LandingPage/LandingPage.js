@@ -3,15 +3,15 @@ import './LandingPage.css';
 import { Link } from 'react-router-dom';
 
 function LandingPage() {
-
   const [accessToken, setTokenState] = useState('');
 
   const onInputChange = event => {
-    setTokenState(event.target.value)
+    sessionStorage.setItem('accessToken', event.target.value);
+    setTokenState(event.target.value);
   }
 
-  const pushAccesTokenToSessionStorage = () => {
-    sessionStorage.setItem('accesToken', accessToken)
+  const pushaccessTokenToSessionStorage = () => {
+    sessionStorage.setItem('accessToken', accessToken)
   }
 
   return (
@@ -20,8 +20,8 @@ function LandingPage() {
       <form className="acces_token_form" >
         <h2 className="type_acces_token_label" forhtml="type_acces_token_input">Please provide your acces token here: </h2>
         <div className="wrapper">
-          <input onChange={onInputChange} className="type_acces_token" type="text" name="accesToken"></input>
-          <Link to={accessToken.length > 10 ? `/home` : `/`}><button onClick={pushAccesTokenToSessionStorage} label={'accesTokenBtn'}>Submit</button> </Link>
+          <input onChange={onInputChange} className="type_acces_token" type="text" name="accessToken"></input>
+          <Link to={accessToken.length > 10 ? `/home/` : `/`}><button onClick={pushaccessTokenToSessionStorage} label={'accessTokenBtn'}>Submit</button> </Link>
         </div>
       </form>
     </section>

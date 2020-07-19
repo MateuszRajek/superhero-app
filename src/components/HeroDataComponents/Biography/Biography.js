@@ -1,7 +1,6 @@
 import React from 'react';
 import './Biography.css';
 
-
 function Biography({ fullName, alterEgos, placeOfBirth }) {
 
   return (

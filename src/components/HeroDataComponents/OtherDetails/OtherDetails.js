@@ -1,7 +1,6 @@
 import React from 'react';
 import './OtherDetails.css';
 
-
 function OtherDetails({ firstAppearance, occupation, team, relatives }) {
 
   return (

@@ -9,7 +9,7 @@ const featuredHeroesArray = [659, 720, 332]
 function FeaturedHeroes() {
   const [heroes, setHeroesState] = useState([]);
   const [isLoading, setLoadingState] = useState(true);
-  const [error, setErrorState] = useState('')
+  const [error, setErrorState] = useState('');
 
   const getAndRenderFeaturedHeroes = async () => {
     const heroes = [];
@@ -28,7 +28,7 @@ function FeaturedHeroes() {
   }
 
   useEffect(() => {
-    getAndRenderFeaturedHeroes();
+    getAndRenderFeaturedHeroes()
   }, [])
 
   return (

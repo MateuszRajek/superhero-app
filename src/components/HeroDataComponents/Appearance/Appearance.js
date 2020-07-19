@@ -1,7 +1,6 @@
 import React from 'react';
 import './Appearance.css';
 
-
 function Appearance({ gender, race, height, weight }) {
 
   return (

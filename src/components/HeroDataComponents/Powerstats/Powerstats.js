@@ -1,7 +1,6 @@
 import React from 'react';
 import './Powerstats.css';
 
-
 function Powerstats({ combat, durability, intelligence, speed, strength }) {
 
   return (
