@@ -6,7 +6,7 @@ console.log(APIToken)
 
 export const getHeroLimitedInfo = async id => {
 
-    if (APIToken === null) {
+    if (!APIToken) {
         window.location.reload();
     } else {
         const { data: image } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/image`);
