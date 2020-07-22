@@ -29,7 +29,7 @@ function FeaturedHeroes() {
 
   useEffect(() => {
     getAndRenderFeaturedHeroes()
-  }, [])
+  }, [heroes])
 
   return (
     <section className="featured_heroes">
