@@ -1,7 +1,7 @@
 # superhero-app
 react.js app created using superhero api from https://superheroapi.com/
 
-There is a api token required for this app. *!!!The Landing Page with token field does not work properly and needs to be fixed.!!!* It can be taken from https://superheroapi.com/ (needs a facebook account to generate token). 
+There is an api token required for this app. *!!!The Landing Page with token field does not work properly and needs to be fixed.!!!* It can be taken from https://superheroapi.com/ (needs a facebook account to generate token). 
 If you are a recruiter the token has been sent via email together with my application.
 
 !!! The Landing Page with token field does not work properly and needs to be fixed. !!!
