@@ -1,6 +1,11 @@
 # superhero-app
 react.js app created using superhero api from https://superheroapi.com/
 
+There is a "Moesif CORS" Chrome extension required to use this app
+
+![moesif cors](https://user-images.githubusercontent.com/62522817/89653164-867dd200-d8be-11ea-8c30-8188ea6513f9.png)
+
+
 There is an api token required for this app. *!!!The Landing Page with token field does not work properly and needs to be fixed.!!!* It can be taken from https://superheroapi.com/ (needs a facebook account to generate token). 
 If you are a recruiter the token has been sent via email together with my application.
 
