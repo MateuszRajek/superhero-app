@@ -16,6 +16,7 @@ function SearchHeroView() {
       const { data } = response
       if (data.error) {
         setErrorState(data.error);
+        setLoadingState(false);
         return
       }
       const { results } = data;
