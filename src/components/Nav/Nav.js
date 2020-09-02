@@ -22,7 +22,7 @@ function Nav() {
     <nav className="main_nav">
       <div className="logo_title_wrapper ">
         <div className="logo_image_container">
-          <Link to="/home"><img className="logo" src={logo} alt="logo" /></Link>
+          <Link to="/"><img className="logo" src={logo} alt="logo" /></Link>
         </div>
         <h1 className="app_title">superheroes app</h1>
       </div>
@@ -31,7 +31,7 @@ function Nav() {
           <label className="type_hero_name_label" forhtml="type_hero_name_input">Enter the name of your favourite hero: </label>
           <input onChange={onInputChange} value={heroNameFromInput} className="type_hero_name" type="text" name="heroName"></input>
         </div>
-        <Link to={heroNameFromInput.length > 3 ? `/search/${heroNameFromInput}` : `/home`}><button onClick={() => { clearState() }} label={'add hero'}>find hero</button> </Link>
+        <Link to={heroNameFromInput.length > 3 ? `/search/${heroNameFromInput}` : `/`}><button onClick={() => { clearState() }} label={'add hero'}>find hero</button> </Link>
       </form>
     </nav >
   )
