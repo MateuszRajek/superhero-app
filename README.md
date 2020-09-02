@@ -1,4 +1,6 @@
 # superhero-app
+Live preview: http://superheroesapp.mrdisweb.com/
+
 react.js app created using superhero api from https://superheroapi.com/
 
 There is a "Moesif CORS" Chrome extension required to use this app
