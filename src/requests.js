@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const APIToken = sessionStorage.getItem('accessToken') ? sessionStorage.getItem('accessToken') : 'APIToken-temporarily-here';
+// const APIToken = sessionStorage.getItem('accessToken') ? sessionStorage.getItem('accessToken') : 'APIToken-temporarily-here';
+const APIToken = 3110661399003594
 
 export const getHeroLimitedInfo = async id => {
 
