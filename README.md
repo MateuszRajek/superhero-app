@@ -1,5 +1,5 @@
 # superhero-app
-Live preview: http://superheroesapp.mrdisweb.com/
+Live preview: http://superheroesapp.mateuszrajek.pl/
 
 react.js app created using superhero api from https://superheroapi.com/
 
