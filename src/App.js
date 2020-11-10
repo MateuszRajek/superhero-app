@@ -18,10 +18,10 @@ function App() {
         <main>
           <div className="container">
             <Switch>
-              {/* <Route exact path="/">
+              <Route exact path="/">
                 <LandingPage />
-              </Route> */}
-              <Route exact path="/" >
+              </Route>
+              <Route path="/home/" >
                 <FeaturedHeroes />
               </Route>
               <Route path="/search/:name">
