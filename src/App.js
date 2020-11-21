@@ -18,11 +18,11 @@ function App() {
         <main>
           <div className="container">
             <Switch>
+              <Route path="/main/" >
+                <FeaturedHeroes />
+              </Route>
               <Route exact path="/">
                 <LandingPage />
-              </Route>
-              <Route path="/home/" >
-                <FeaturedHeroes />
               </Route>
               <Route path="/search/:name">
                 <SearchHeroView />

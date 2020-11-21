@@ -8,7 +8,7 @@ function LandingPage() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const pushaccessTokenToSessionStorage = () => {
-    sessionStorage.setItem('accessToken', accessToken)
+    sessionStorage.setItem('accessToken', accessToken);
   }
   
   const onInputChange = event => {
@@ -27,7 +27,7 @@ function LandingPage() {
         <h2 className="type_acces_token_label" forhtml="type_acces_token_input">Please provide your acces token here: </h2>
         <div className="wrapper">
           <input onChange={onInputChange} className="type_acces_token" type="text" name="accessToken"></input>
-          <Link to={accessToken.length > 10 ? `/home/` : `/`}><button label={'accessTokenBtn'}>Submit</button> </Link>
+          <Link to={accessToken.length > 10 ? `/main/` : `/`}><button label={'accessTokenBtn'} >Submit</button> </Link>
         </div>
       </form>
     </section>
