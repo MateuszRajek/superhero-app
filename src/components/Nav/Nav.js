@@ -8,7 +8,7 @@ function Nav() {
 
   const onInputChange = event => {
     setheroNameState(event.target.value);
-  }
+      }
 
   const clearState = () => {
     if (heroNameFromInput === '') {
@@ -22,7 +22,7 @@ function Nav() {
     <nav className="main_nav">
       <div className="logo_title_wrapper ">
         <div className="logo_image_container">
-          <Link to="/home"><img className="logo" src={logo} alt="logo" /></Link>
+          <Link to="/main/"><img className="logo" src={logo} alt="logo" /></Link>
         </div>
         <h1 className="app_title">superheroes app</h1>
       </div>

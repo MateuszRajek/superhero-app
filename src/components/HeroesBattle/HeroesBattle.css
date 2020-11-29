@@ -1,0 +1,51 @@
+.heroes_battlefield {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.featured_heroes_section_title {
+  margin: 50px 0;
+  font-size: 45px;
+  font-family: 'Bangers', cursive;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: gray;
+}
+
+.first_hero_area, .second_hero_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.featured_hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 15px;
+}
+
+@media (min-width: 560px) {
+  .featured_hero {
+    width: 65%;
+  }
+}
+
+@media (min-width: 764px) {
+  .featured_hero {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1125px) {
+  .featured_hero {
+    width: 30%;
+  }
+}

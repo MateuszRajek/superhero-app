@@ -18,6 +18,7 @@ function FeaturedHeroes() {
       heroes.push(data);
       if (data.error) {
         setErrorState(data.error);
+        console.log(data)
         return
       }
     }
