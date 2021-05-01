@@ -1,10 +1,8 @@
 import axios from 'axios'
 
-const APIToken = sessionStorage.getItem('accessToken') 
-
-export const getHeroLimitedInfo = async id => {
-        const { data: image } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/image`);
-        const { data: powerstats } = await axios.get(`https://superheroapi.com/api/${APIToken}/${id}/powerstats`);
+export const getHeroLimitedInfo = async (id, apiKey) => {
+        const { data: image } = await axios.get(`https://superheroapi.com/api/${apiKey}/${id}/image`);
+        const { data: powerstats } = await axios.get(`https://superheroapi.com/api/${apiKey}/${id}/powerstats`);
 
         return ({
             imageUrl: image.url,
@@ -14,10 +12,10 @@ export const getHeroLimitedInfo = async id => {
         })
     }
 
-export const getHeroBySearchedName = name => {
-    return axios.get(`https://superheroapi.com/api/${APIToken}/search/${name}`)
+export const getHeroBySearchedName = (name, apiKey) => {
+    return axios.get(`https://superheroapi.com/api/${apiKey}/search/${name}`)
 }
 
-export const getFullHeroInfoById = id => {
-    return axios.get(`https://superheroapi.com/api/${APIToken}/${id}`)
+export const getFullHeroInfoById = (id, apiKey) => {
+    return axios.get(`https://superheroapi.com/api/${apiKey}/${id}`)
 }

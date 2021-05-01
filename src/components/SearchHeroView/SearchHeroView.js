@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './SearchHeroView.css';
 import { getHeroBySearchedName } from '../../requests'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import Hero from '../Hero/Hero';
 
@@ -12,7 +12,8 @@ function SearchHeroView() {
   const [error, setErrorState] = useState('');
 
   const getAndRenderSearchedHeroes = async () => {
-    await getHeroBySearchedName(name).then(response => {
+    const apiKey = sessionStorage.getItem('accessToken')
+    await getHeroBySearchedName(name, apiKey).then(response => {
       const { data } = response
       if (data.error) {
         setErrorState(data.error);
@@ -36,6 +37,7 @@ function SearchHeroView() {
       {!isLoading && error && <p>{error}</p>}
       {!isLoading && <section className="searched_heroes_displayed">
         {heroesList.map(hero => {
+          console.log(hero.image.url)
           return (
             <div className="searched_hero" key={hero.id}>
               <Hero id={hero.id} name={hero.name} imageUrl={hero.image.url} hero={hero} />

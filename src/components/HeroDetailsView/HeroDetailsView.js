@@ -16,7 +16,8 @@ function HeroDetailsView() {
   const [error, setErrorState] = useState('');
 
   const getHeroInfo = async () => {
-    await getFullHeroInfoById(id).then(response => {
+    const apiKey = sessionStorage.getItem('accessToken')
+    await getFullHeroInfoById(id, apiKey).then(response => {
       const { data } = response;
       if (data.error) {
         setErrorState(data.error);
@@ -30,6 +31,7 @@ function HeroDetailsView() {
 
   useEffect(() => {
     getHeroInfo();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   return (

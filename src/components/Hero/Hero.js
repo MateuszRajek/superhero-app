@@ -9,6 +9,7 @@ function Hero({ id, name, imageUrl, hero }) {
     <>
       <h2 className="hero_name">{name}</h2>
       <div className="hero_img_container">
+        {console.log(imageUrl, hero)}
         <Link to={`/hero/${id}`}><img className="hero_img" src={imageUrl} alt="" /></Link>
       </div>
       <Powerstats combat={hero.powerstats.combat} durability={hero.powerstats.durability} intelligence={hero.powerstats.intelligence}

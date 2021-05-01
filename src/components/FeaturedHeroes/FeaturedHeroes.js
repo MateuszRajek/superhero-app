@@ -13,15 +13,21 @@ function FeaturedHeroes() {
 
   const getAndRenderFeaturedHeroes = async () => {
     const heroes = [];
+    const apiKey = sessionStorage.getItem('accessToken')
     for (const heroId of featuredHeroesArray) {
-      const data = await getHeroLimitedInfo(heroId);
+      const data = await getHeroLimitedInfo(heroId, apiKey);
       heroes.push(data);
-      if (data.error) {
+      console.log(data)
+      if (data.powerstats.error) {
         setErrorState(data.error);
         console.log(data)
         return
       }
     }
+
+    await getHeroLimitedInfo(featuredHeroesArray).then(response => {
+      console.log(response)
+    })
 
     setHeroesState(heroes);
     setLoadingState(false);
